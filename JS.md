@@ -383,3 +383,92 @@ console.log(addNums(5, 5));
 
 output: 10
 
+----------------------------------------------------------------
+<!-- Constructor function -->
+function Person(firstName, lastName, dob){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
+}
+
+<!-- Instantiate object -->
+const person1 = new person{'Yeab', 'doe', '3-4-2024'};
+const person2 = new person{'Me', 'doe', '3-4-2023'};
+
+console.log(person2.firstName);
+// Me
+console.log(person2.dob);
+// Date & Time 
+console.log(person2.dob.getFullYear());
+// 2023
+
+------------------------------------------------------------
+function Person(firstName, lastName, dob){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
+  this.getBirrYear = function() {
+    return this.dob.getFullYear();
+  }
+  this.getFullName = function() {
+    return '${this.firstName} ${this.lastName}';
+  }
+}
+
+const person1 = new person{'Yeab', 'me', '3-4-2024'};
+const person2 = new person{'Me', 'doe', '3-4-2023'};
+
+console.log(person1.getBirthYear());
+// 2024
+
+console.log(person1.getFullName());
+// Yeab me
+
+------------------------------------------------------------
+<!-- Class -->
+class Person {
+  constructor (firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName
+    this.dob = new Date(dob);
+  }
+
+  getBirthYear() {
+    return this.dobFullYear();
+  }
+
+  getFullName() {
+    return '${this.firstName} ${this.lastName}';
+  }
+}
+
+------------------------------------------------------------
+<!-- Selce items from the DOM -->
+
+<!-- Single element -->
+console.log(document.querySelectorAll('my-from'));
+// select form 
+
+console.log(getElementsByClassName('h1'));
+// select h1
+
+<!-- Multiple element -->
+console.log(document.querySelectorAll('.item'));
+// select item class 
+
+console.log(document.getElementsByClassName('item'));
+// select item class
+
+------------------------------------------------------------
+<ul class="items">
+  <li class="item"> ITEM 1 </li>
+  <li class="item"> ITEM 2 </li>
+  <li class="item"> ITEM 3 </li>
+  <li class="item"> ITEM 4 </li>
+</ul>
+
+<!-- Manipulating DOM -->
+
+const ul = document.querySelector('.items');
+
+ul.remove();
