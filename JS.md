@@ -8,7 +8,7 @@
    . <script src="./src/script.js">
      </script> <!-- External or separate js file -->
 
--> Debug & Outputing elements
+-> Debug & Outputing elements 
    ----- - --------- --------
   - alert('Hello YeabMe');
 
